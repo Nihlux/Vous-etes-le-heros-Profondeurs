@@ -11,3 +11,4 @@
 
 ## Diagramme
 
+![](assets/)
