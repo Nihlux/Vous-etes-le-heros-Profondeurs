@@ -11,4 +11,4 @@
 
 ## Diagramme
 
-![](assets/)
+![](assets/diagramme_synopsis.drawio.png)
