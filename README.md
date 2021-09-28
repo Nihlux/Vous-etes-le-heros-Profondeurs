@@ -7,7 +7,7 @@
 
 **Inspiration**: Mécanique de [contrats](https://witcher.fandom.com/wiki/The_Witcher_3_contracts) dans l'univers de "The Witcher"
 
-**Palette de couleurs**: [coolors.co](www.google.ca)
+**Palette de couleurs**: [coolors.co](https://coolors.co/000000-141429-ffe2ad-709775-7da182)
 
 ## Diagramme
 
