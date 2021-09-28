@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    font-family: Rocks;
+}
+
+html, body{
+    background-color: #2d3047;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+@font-face {
+    font-family: Old Cave;
+    src: url(assets/Old\ Cave.otf);
+}
+
+@font-face {
+    font-family: Rocks;
+    src: url(assets/Rocks.ttf);
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+    height: 650px;
+    background-color: #F4C95D;
+    min-height: 100px;
+}
+
+.game h1{
+    font-family: Old Cave;
+    text-transform: uppercase;
+    font-size: 40pt;
+    margin: 10px;
+}
+
+h2, p {
+    margin: 0;
+}
+
+h2 {
+    font-size: 30pt;
+}
+
+p {
+    font-size: 24pt;
+    width: 75%;
+}
+
+img {
+    position: relative;
+    width: 500px;
+    margin: 15px 0px;
+}
+
+.boutons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+button {
+    background-color: #854d27;
+    font-size: 24pt;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #965930;
+}
