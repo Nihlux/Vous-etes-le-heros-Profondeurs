@@ -5,7 +5,7 @@
 
 **Genre**: Fantastique, Action, Aventure
 
-**Inspiration**: Mécanique de [contrats](https://witcher.fandom.com/wiki/The_Witcher_3_contracts) dans l'univers de "The Witcher"
+**Inspiration**: [Mécanique de contrats dans l'univers de "The Witcher"](https://witcher.fandom.com/wiki/The_Witcher_3_contracts)
 
 **Palette de couleurs**: [coolors.co](https://coolors.co/000000-141429-ffe2ad-709775-7da182)
 
