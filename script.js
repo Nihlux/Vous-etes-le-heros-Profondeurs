@@ -1,16 +1,15 @@
-
-/* LES PROPRIÉTÉS OPTIONS DANS CHAQUE CHAPITRE SONT EN COMMENTAIRE, CAR ILS FAISAIENT EN SORTE
-QUE TOUT LE CODE NE MARCHAIT PLUS. JE NE SAIS PAS TROP COMMENT LES INTÉGRÉS DANS MON CODE. */
-
 const chapitre4 = {
     subtitle: "Repaire de l'araignée",
     img: "assets/spider_nest.jpg",
     text: "Derrière la barricade, vous retrouvez à votre droite le nid de l'araignée rempli de toiles d'araignée et de pochettes comportant les oeuf d'araignées. À votre gauche vous voyez un rideau d'eau couler. Vous vous dites que vous êtes derrière un chute d'eau. Vous pouvez soit vous enfuir en sautant au travers de la chute d'eau pour atterir dans l'eau tout au bas ou de mettre le feu au nid d'araignées et, ensuite, de vous enfuir.",
-    /*options: ["Brûler le nid d'araignées" = {
-        text: "Vous mettez le feu au nid de l'araignée géante. De retour en ville, vous êtes bien récompensés pour avoir libéré la mine abandonnée de tout danger."
-    }, "Fuir vers la sortie" = {
-        text: "Vous fuyez vers la sortie au plus vite et rentrez à votre domicile tard le soir. Les bébés de l'araignée géante connaissent votre trace et viennent vous tuer dans votre sommeil."
-    }]*/
+    options: [
+        {
+            text: "Brûler le nid d'araignées. Vous mettez le feu au nid de l'araignée géante. De retour en ville, vous êtes bien récompensés pour avoir libéré la mine abandonnée de tout danger."
+        },
+        {
+            text: "Fuir vers la sortie. Vous fuyez vers la sortie au plus vite et rentrez à votre domicile tard le soir. Les bébés de l'araignée géante connaissent votre trace et viennent vous tuer dans votre sommeil."
+        }
+    ]
 }
 
 const chaptersObj = {
@@ -61,7 +60,7 @@ const chaptersObj = {
                 text: "Prendre le tunnel de droite. Vous empruntez le chemin de droite, mais faites vite demi-tour lorsqu'au bout du chemin vous arrivez à une impasse."
             },  
             {
-            text: "Vous décider d'explorer la vaste pièce et trouvez une hache. Vous vous questionnez sur quel tunnel emprunter."
+                text: "Vous décider d'explorer la vaste pièce et trouvez une hache. Vous vous questionnez sur quel tunnel emprunter."
             }
         ]
     },
@@ -74,13 +73,3 @@ function goToChapter(chapterName) {
     console.log(chapter.text)
     console.log(chapter.img)
 }
-
-/*options: [
-    {
-        text: "",
-        action: ""
-    },
-    {
-        text: ""
-    }
-]*/
