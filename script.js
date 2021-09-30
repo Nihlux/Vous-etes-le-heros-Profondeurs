@@ -1,17 +1,3 @@
-const chapitre4 = {
-    subtitle: "Repaire de l'araignée",
-    img: "assets/spider_nest.jpg",
-    text: "Derrière la barricade, vous retrouvez à votre droite le nid de l'araignée rempli de toiles d'araignée et de pochettes comportant les oeuf d'araignées. À votre gauche vous voyez un rideau d'eau couler. Vous vous dites que vous êtes derrière un chute d'eau. Vous pouvez soit vous enfuir en sautant au travers de la chute d'eau pour atterir dans l'eau tout au bas ou de mettre le feu au nid d'araignées et, ensuite, de vous enfuir.",
-    options: [
-        {
-            text: "Brûler le nid d'araignées. Vous mettez le feu au nid de l'araignée géante. De retour en ville, vous êtes bien récompensés pour avoir libéré la mine abandonnée de tout danger."
-        },
-        {
-            text: "Fuir vers la sortie. Vous fuyez vers la sortie au plus vite et rentrez à votre domicile tard le soir. Les bébés de l'araignée géante connaissent votre trace et viennent vous tuer dans votre sommeil."
-        }
-    ]
-}
-
 const chaptersObj = {
     premiers_pas: chapitre1 = {
         subtitle: "Premiers pas",
@@ -23,7 +9,7 @@ const chaptersObj = {
             },  
             {
                 text: "Prendre le tunnel de droite. Vous empruntez le chemin de droite. Si vous n'avez pas trouvé la lanterne, vous trébuchez par dessus un clôture de sécurité et tombez dans un trou profond. Vous mourrez. Si vous avez trouvé la lanterne, vous arrivez à des escaliers descendants très bas et voyez une clôture de sécurité vous empêchant de tomber dans un gouffre.",
-                action: goToChapter('embuscade')
+                action: "goToChapter('embuscade')"
             }
         ]
     },
@@ -43,7 +29,7 @@ const chaptersObj = {
             },
             {
                 text: "Affronter l'araignée. Vous prenez votre courage à deux mains et vous vous décidez d'affronter cet horrible monstre. Vous remportez le combat et décidez de vous reposer un peu avant de continuer votre chemin.",
-                action: goToChapter('décision')
+                action: "goToChapter('décision')"
             }
         ]
     },
@@ -54,7 +40,7 @@ const chaptersObj = {
         options: [
             {
                 text: "Prendre le tunnel de gauche. Vous empruntez le chemin de gauche, mais faites vite demi-tour lorsqu'au bout du chemin vous êtes face à une barricade dont vous êtes incapable de détruire à l'épée. Cependant, si vous avez explorer la pièce et trouvé la hache, vous brisez la barricade et continuez à avancer aux travers de ces grottes maudites.",
-                action: goToChapter('repaire_de_laraignée')
+                action: "goToChapter('repaire_de_laraignée')"
             }, 
             {
                 text: "Prendre le tunnel de droite. Vous empruntez le chemin de droite, mais faites vite demi-tour lorsqu'au bout du chemin vous arrivez à une impasse."
@@ -64,12 +50,24 @@ const chaptersObj = {
             }
         ]
     },
-    slug: "repaire_de_laraignée"
+    repaire_de_laraignée: chapitre4 = {
+        subtitle: "Repaire de l'araignée",
+        img: "assets/spider_nest.jpg",
+        text: "Derrière la barricade, vous retrouvez à votre droite le nid de l'araignée rempli de toiles d'araignée et de pochettes comportant les oeuf d'araignées. À votre gauche vous voyez un rideau d'eau couler. Vous vous dites que vous êtes derrière un chute d'eau. Vous pouvez soit vous enfuir en sautant au travers de la chute d'eau pour atterir dans l'eau tout au bas ou de mettre le feu au nid d'araignées et, ensuite, de vous enfuir.",
+        options: [
+            {
+                text: "Brûler le nid d'araignées. Vous mettez le feu au nid de l'araignée géante. De retour en ville, vous êtes bien récompensés pour avoir libéré la mine abandonnée de tout danger."
+            },
+            {
+                text: "Fuir vers la sortie. Vous fuyez vers la sortie au plus vite et rentrez à votre domicile tard le soir. Les bébés de l'araignée géante connaissent votre trace et viennent vous tuer dans votre sommeil."
+            }
+        ]
+    }
 }
 
 function goToChapter(chapterName) {
-    let chapter = chaptersObj[chapterName]
-    console.log(chapter.subtitle)
-    console.log(chapter.text)
-    console.log(chapter.img)
+    let chapter = chaptersObj[chapterName];
+    console.log(chapter.subtitle);
+    console.log(chapter.text);
+    console.log(chapter.img);
 }
