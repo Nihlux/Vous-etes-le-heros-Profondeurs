@@ -1,6 +1,6 @@
 # Vous-etes-le-heros-Profondeurs
 
-# Profondeurs
+# Depths
 [Développement Web - Projet vous êtes le héros](https://smnarnold.com/projets/vous-etes-le-heros)
 
 **Genre**: Fantastique, Action, Aventure
