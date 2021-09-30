@@ -43,7 +43,7 @@ const chapitre3 = {
 const chapitre4 = {
     subtitle: "Repaire de l'araignée",
     img: "assets/spider_nest.jpg",
-    text: "",
+    text: "Derrière la barricade, vous retrouvez à votre droite le nid de l'araignée rempli de toiles d'araignée et de pochettes comportant les oeuf d'araignées. À votre gauche vous voyez un rideau d'eau couler. Vous vous dites que vous êtes derrière un chute d'eau. Vous pouvez soit vous enfuir en sautant au travers de la chute d'eau pour atterir dans l'eau tout au bas ou de mettre le feu au nid d'araignées et, ensuite, de vous enfuir.",
     /*options: ["Brûler le nid d'araignées" = {
         text: "Vous mettez le feu au nid de l'araignée géante. De retour en ville, vous êtes bien récompensés pour avoir libéré la mine abandonnée de tout danger."
     }, "Fuir vers la sortie" = {
