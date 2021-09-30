@@ -2,10 +2,6 @@
 /* LES PROPRIÉTÉS OPTIONS DANS CHAQUE CHAPITRE SONT EN COMMENTAIRE, CAR ILS FAISAIENT EN SORTE
 QUE TOUT LE CODE NE MARCHAIT PLUS. JE NE SAIS PAS TROP COMMENT LES INTÉGRÉS DANS MON CODE. */
 
-const chapitre3 = {
-    
-}
-
 const chapitre4 = {
     subtitle: "Repaire de l'araignée",
     img: "assets/spider_nest.jpg",
@@ -22,12 +18,15 @@ const chaptersObj = {
         subtitle: "Premiers pas",
         img: "assets/cave_split.jpg",
         text: "En entrant dans la mine abandonnée, vous rencontrez très tôt une bifurquation du chemin principal. Il se divise en deux chemins plus étroits. Vous pouvez soit emprunter le tunnel se dirigeant vers la gauche soit prendre celui de droite.",
-        /*options: ["Prendre le tunnel de gauche" = {
-            text: "Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal."
-        }, "Prendre le tunnel de droite" = {
-            text: "Vous empruntez le chemin de droite. Si vous n'avez pas trouvé la lanterne, vous trébuchez par dessus un clôture de sécurité et tombez dans un trou profond. Vous mourrez. Si vous avez trouvé la lanterne, vous arrivez à des escaliers descendants très bas et voyez une clôture de sécurité vous empêchant de tomber dans un gouffre.",
-            action: goToChapter('embuscade')
-        }]*/
+        options: [
+            {
+                text: "Prendre le tunnel de gauche. Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal."
+            },  
+            {
+                text: "Prendre le tunnel de droite. Vous empruntez le chemin de droite. Si vous n'avez pas trouvé la lanterne, vous trébuchez par dessus un clôture de sécurité et tombez dans un trou profond. Vous mourrez. Si vous avez trouvé la lanterne, vous arrivez à des escaliers descendants très bas et voyez une clôture de sécurité vous empêchant de tomber dans un gouffre.",
+                action: goToChapter('embuscade')
+            }
+        ]
     },
     embuscade: chapitre2 = {
         subtitle: "Embuscade",
