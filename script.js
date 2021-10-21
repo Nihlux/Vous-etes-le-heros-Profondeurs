@@ -1,18 +1,30 @@
 let lanternFound = false;
 
-function lantern() {
+function lanternFound() {
     lanternFound = true
-    goToChapter("embuscade");
+    isLanternFound();
+}
+
+function isLanternFound() {
+    if (lanternFound = true){
+        goToChapter("embuscade");
+    }
+    else{
+        goToChapter("tomber")
+    }
 }
 
 const chaptersObj = {
+    
+
     premiers_pas: chapitre1 = {
         subtitle: "Premiers pas",
         img: "assets/cave_split.jpg",
         text: "En entrant dans la mine abandonnée, vous rencontrez très tôt une bifurquation du chemin principal. Il se divise en deux chemins plus étroits. Vous pouvez soit emprunter le tunnel se dirigeant vers la gauche soit prendre celui de droite.",
         options: [
             {
-                text: "Prendre le tunnel de gauche. Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal."
+                text: "Prendre le tunnel de gauche. Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal.",
+                action: "goToChapter('tomber')"
             },  
             {
                 text: "Prendre le tunnel de droite.",
