@@ -1,6 +1,6 @@
 /*let lanternFound = false;
 
-function lanternFound() {
+function lanternIsFound() {
     lanternFound = true
     isLanternFound();
 }
@@ -12,8 +12,8 @@ function isLanternFound() {
     else{
         goToChapter("tomber")
     }
-}
-*/
+}*/
+
 const chaptersObj = {
 
 
@@ -86,9 +86,9 @@ const chaptersObj = {
 
 function goToChapter(chapterName) {
     let chapter = chaptersObj[chapterName];
-    console.log(chapter.subtitle);
-    console.log(chapter.text);
-    console.log(chapter.img);
+    // console.log(chapter.subtitle);
+    // console.log(chapter.text);
+    // console.log(chapter.img);
 
     let subtitle = document.getElementById("subtitle");
     subtitle.innerText = chapter.subtitle;
@@ -97,11 +97,12 @@ function goToChapter(chapterName) {
     let image = document.getElementById("image");
     image.src = chapter.img;
 
-    let buttons = document.getElementsByClassName("boutons");
+    let buttons = document.querySelector(".boutons");
     let button = "";
-    for (i = 0; i < chaptersObj[chapterName].options.length; i++){
-        console.log(options[i].text)
-        button += `<button onclick="${options.action}">${options.text}</button>`;
+    let options = chapter.options;
+    for (i = 0; i < chapter.options.length; i++){
+        console.log(options[i].text);
+        button += `<button onclick="${options[i].action}">${options[i].text}</button>`;
     }
     buttons.innerHTML = button;
 }
