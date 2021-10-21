@@ -24,11 +24,11 @@ const chaptersObj = {
         options: [
             {
                 text: "Prendre le tunnel de gauche. Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal.",
-                action: "goToChapter('tomber')"
+                action: "lanternIsFound()"
             },  
             {
                 text: "Prendre le tunnel de droite.",
-                action: "goToChapter('embuscade')"
+                action: "isLanternFound()"
             }
         ]
     },
