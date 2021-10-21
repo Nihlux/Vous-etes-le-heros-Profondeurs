@@ -1,3 +1,5 @@
+let lanternFound = false;
+
 const chaptersObj = {
     premiers_pas: chapitre1 = {
         subtitle: "Premiers pas",
@@ -39,7 +41,7 @@ const chaptersObj = {
         text: "Après avoir battu et vaincu l'araignée géante, vous explorez vos options. Vous devez continuer votre route afin de trouver une issue à cette grotte maudite.",
         options: [
             {
-                text: "Prendre le tunnel de gauche. Vous empruntez le chemin de gauche, mais faites vite demi-tour lorsqu'au bout du chemin vous êtes face à une barricade dont vous êtes incapable de détruire à l'épée. Cependant, si vous avez explorer la pièce et trouvé la hache, vous brisez la barricade et continuez à avancer aux travers de ces grottes maudites.",
+                text: "Prendre le tunnel de gauche.",
                 action: "goToChapter('repaire_de_laraignée')"
             }, 
             {
@@ -53,7 +55,7 @@ const chaptersObj = {
     repaire_de_laraignée: chapitre4 = {
         subtitle: "Repaire de l'araignée",
         img: "assets/spider_nest.jpg",
-        text: "Derrière la barricade, vous retrouvez à votre droite le nid de l'araignée rempli de toiles d'araignée et de pochettes comportant les oeuf d'araignées. À votre gauche vous voyez un rideau d'eau couler. Vous vous dites que vous êtes derrière un chute d'eau. Vous pouvez soit vous enfuir en sautant au travers de la chute d'eau pour atterir dans l'eau tout au bas ou de mettre le feu au nid d'araignées et, ensuite, de vous enfuir.",
+        text: "Vous empruntez le chemin de gauche, mais faites vite demi-tour lorsqu'au bout du chemin vous êtes face à une barricade dont vous êtes incapable de détruire à l'épée. Cependant, si vous avez explorer la pièce et trouvé la hache, vous brisez la barricade et continuez à avancer aux travers de ces grottes maudites. Derrière la barricade, vous retrouvez à votre droite le nid de l'araignée rempli de toiles d'araignée et de pochettes comportant les oeuf d'araignées. À votre gauche vous voyez un rideau d'eau couler. Vous vous dites que vous êtes derrière un chute d'eau. Vous pouvez soit vous enfuir en sautant au travers de la chute d'eau pour atterir dans l'eau tout au bas ou de mettre le feu au nid d'araignées et, ensuite, de vous enfuir.",
         options: [
             {
                 text: "Brûler le nid d'araignées. Vous mettez le feu au nid de l'araignée géante. De retour en ville, vous êtes bien récompensés pour avoir libéré la mine abandonnée de tout danger."
@@ -70,4 +72,20 @@ function goToChapter(chapterName) {
     console.log(chapter.subtitle);
     console.log(chapter.text);
     console.log(chapter.img);
+
+    let subtitle = document.getElementById("subtitle");
+    subtitle.innerText = chapter.subtitle;
+    let text = document.getElementById("text");
+    text.innerText = chapter.text;
+    let image = document.getElementById("image");
+    image.src = chapter.img;
+
+    let buttons = document.getElementById("boutons");
+    let button = "";
+    let options = chapter.options
+    for (i = 0; i < chaptersObj[chapterName].options.length; i++){
+        let choix = options[i];
+        button += `<button onclick="${choix.action}">${choix.text}</button>`;
+    }
+    buttons.innerHTML = button;
 }
