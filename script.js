@@ -1,8 +1,8 @@
-/*let lanternFound = false;
+let lanternFound = false;
 
 function lanternIsFound() {
     lanternFound = true
-    isLanternFound();
+    goToChapter("embuscade")
 }
 
 function isLanternFound() {
@@ -12,7 +12,7 @@ function isLanternFound() {
     else{
         goToChapter("tomber")
     }
-}*/
+}
 
 const chaptersObj = {
 
