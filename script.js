@@ -1,6 +1,6 @@
-if(localStorage.getItem("subtitle") != undefined){
-  let subtitle = localStorage.getItem("subtitle");
-  goToChapter(subtitle);
+if(localStorage.getItem("titre") != undefined){
+  const titre = localStorage.getItem("titre");
+  goToChapter(titre);
 }
 else{
   goToChapter('premiers_pas');
@@ -128,7 +128,7 @@ function goToChapter(chapterName) {
     audio.currentTime = 0;
   })
 
-  localStorage.setItem("subtitle", chapter.subtitle);
+  localStorage.setItem("titre", chapter.subtitle);
 }
 
 goToChapter('premiers_pas');
