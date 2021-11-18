@@ -32,7 +32,7 @@ const chaptersObj = {
   embuscade: {
     subtitle: "Embuscade",
     img: "assets/spider_ambush.jpg",
-    video: giant_spider.gif,
+    video: "giant_spider.gif",
     text: "Vous empruntez le chemin de droite. Vous arrivez à des escaliers descendants très bas et voyez, par la lueur de votre lanterne, une clôture de sécurité vous empêchant de tomber dans un gouffre. Au bas de l'escalier délabré, vous remarquez un changement au niveau de l'humidité de l'air. Lanterne à la main, vous éclairez le nouveau tunnel se présentant devant vous avant de vous y aventurer. Quelques minutes plus tard, le passage débouche enfin sur une très grande pièce ayant la forme d'un dome. Du sol sont émergées des tours de pierres portant, encastrées dans celles-ci, des pierres précieuses émanant une douce lueur verte ne vous permettant point d'apercevoir le plafond de la grotte. Au loin, vous apercevez différents tunnels à partir de l'entrée de la pièce. Tout semblait paisible alors que vous vous dirigiez vers le centre de la pièce, quand soudain, vous entendez un cliquetis vous glaçant les entrailles. Une araignée géante et poilue commence à descendre rapidement de sa toile devant vous et vous prend en embuscade! Vous apercevez un tunnel à votre gauche, puis un à votre droite. Vous vous faites aussi l'idée de lancer votre lanterne sur l'araignée pour tenter de la brûler. Finalement, vous avez aussi l'option d'affronter la créature monstrueuse à l'aide de votre épée.",
     options: [
       {
@@ -53,7 +53,7 @@ const chaptersObj = {
   decision: {
     subtitle: "Décision",
     img: "assets/adventurer_after_combat.jpg",
-    video: room_exploration.gif,
+    video: "room_exploration.gif",
     text: "Après avoir battu et vaincu l'araignée géante, vous explorez vos options. Vous devez continuer votre route afin de trouver une issue à cette grotte maudite.",
     options: [
       {
@@ -105,6 +105,13 @@ function goToChapter(chapterName) {
     button += `<button onclick="${options[i].action}">${options[i].text}</button>`;
   }
   buttons.innerHTML = button;
+
+  if(chapter.video != undefined) {
+    chapter.video = `<video src="${chapter.video}" muted autoplay loop></video>`
+  }
+  else{
+    image.src = chapter.img;
+  }
 }
 
 goToChapter('premiers_pas');
