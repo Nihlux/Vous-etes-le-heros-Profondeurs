@@ -107,11 +107,16 @@ function goToChapter(chapterName) {
   buttons.innerHTML = button;
 
   if(chapter.video != undefined) {
-    chapter.video = `<video src="${chapter.video}" muted autoplay loop></video>`
+    chapter.img = `<video src="${chapter.video}" muted autoplay loop></video>`
   }
   else{
     image.src = chapter.img;
   }
+
+  const audio = new Audio('water_drop.mp3')
+  options.addEventListener("click", function(){
+    audio.play();
+  })
 }
 
 goToChapter('premiers_pas');
