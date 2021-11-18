@@ -113,10 +113,12 @@ function goToChapter(chapterName) {
     image.src = chapter.img;
   }
 
+  let btn = document.querySelector(".btn");
   const audio = new Audio('water_drop.mp3')
-  options.addEventListener("click", function(){
+  btn.addEventListener("click", function(){
     audio.play();
   })
+  audio.currentTime = 0;
 }
 
 goToChapter('premiers_pas');
