@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-// let lanternFound = false;
-
-// function lanternIsFound() {
-//     lanternFound = true
-//     isLanternFound();
-// }
-
-// function isLanternFound() {
-//     if (lanternFound = true){
-//         goToChapter("embuscade");
-//     }
-//     else{
-//         goToChapter("tomber")
-//     }
-// }
-=======
 let lanternFound = false;
 
 function lanternIsFound() {
@@ -29,7 +12,6 @@ function isLanternFound() {
     goToChapter("tomber");
   }
 }
->>>>>>> 257bfee89d7938e34101cbae3a8115e0960887e1
 
 const chaptersObj = {
   premiers_pas: {
