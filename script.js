@@ -1,3 +1,11 @@
+if(localStorage.getItem("subtitle") != undefined){
+  let subtitle = localStorage.getItem("subtitle");
+  goToChapter(subtitle);
+}
+else{
+  goToChapter('premiers_pas');
+};
+
 let lanternFound = false;
 
 function lanternIsFound() {
@@ -114,11 +122,13 @@ function goToChapter(chapterName) {
   }
 
   let btn = document.querySelector(".btn");
-  const audio = new Audio('water_drop.mp3')
+  const audio = new Audio('water_drop.mp3');
   btn.addEventListener("click", function(){
     audio.play();
+    audio.currentTime = 0;
   })
-  audio.currentTime = 0;
+
+  localStorage.setItem("subtitle", chapter.subtitle);
 }
 
 goToChapter('premiers_pas');
