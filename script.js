@@ -6,6 +6,13 @@ else{
   goToChapter('premiers_pas');
 };
 
+if(localStorage.getItem("lantern") != undefined){
+  lanternFound = localStorage.getItem("lantern");
+}
+else {
+  lanternFound = false;
+};
+
 let lanternFound = false;
 
 function lanternIsFound() {
@@ -16,6 +23,7 @@ function lanternIsFound() {
 function isLanternFound() {
   if (lanternFound == true) {
     goToChapter("embuscade");
+    localStorage.setItem("lantern", true);
   } else {
     goToChapter("tomber");
   }
