@@ -1,18 +1,18 @@
-/*let lanternFound = false;
+// let lanternFound = false;
 
-function lanternIsFound() {
-    lanternFound = true
-    isLanternFound();
-}
+// function lanternIsFound() {
+//     lanternFound = true
+//     isLanternFound();
+// }
 
-function isLanternFound() {
-    if (lanternFound = true){
-        goToChapter("embuscade");
-    }
-    else{
-        goToChapter("tomber")
-    }
-}*/
+// function isLanternFound() {
+//     if (lanternFound = true){
+//         goToChapter("embuscade");
+//     }
+//     else{
+//         goToChapter("tomber")
+//     }
+// }
 
 const chaptersObj = {
 
