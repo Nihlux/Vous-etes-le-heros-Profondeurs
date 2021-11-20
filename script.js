@@ -1,34 +1,3 @@
-if(localStorage.getItem("titre") != undefined){
-  const titre = localStorage.getItem("titre");
-  goToChapter(titre);
-}
-else{
-  goToChapter('premiers_pas');
-};
-
-if(localStorage.getItem("lantern") != undefined){
-  lanternFound = localStorage.getItem("lantern");
-}
-else {
-  lanternFound = false;
-};
-
-let lanternFound = false;
-
-function lanternIsFound() {
-  lanternFound = true;
-  goToChapter("embuscade");
-}
-
-function isLanternFound() {
-  if (lanternFound == true) {
-    goToChapter("embuscade");
-    localStorage.setItem("lantern", true);
-  } else {
-    goToChapter("tomber");
-  }
-}
-
 const chaptersObj = {
   premiers_pas: {
     subtitle: "Premiers pas",
@@ -100,6 +69,34 @@ const chaptersObj = {
   },
 };
 
+const audio = new Audio('assets/water_drop.mp3');
+
+if(localStorage.getItem("titre") != undefined){
+  const titre = localStorage.getItem("titre");
+  goToChapter(titre);
+} else{
+  goToChapter('premiers_pas');
+};
+
+lanternFound = false;
+if(localStorage.getItem("lantern") != undefined){
+  lanternFound = localStorage.getItem("lantern");
+}
+
+function lanternIsFound() {
+  lanternFound = true;
+  localStorage.setItem("lantern", true);
+  goToChapter("embuscade");
+}
+
+function isLanternFound() {
+  if (lanternFound == true) {
+    goToChapter("embuscade");
+  } else {
+    goToChapter("tomber");
+  }
+}
+
 function goToChapter(chapterName) {
   let chapter = chaptersObj[chapterName];
   // console.log(chapter.subtitle);
@@ -110,33 +107,25 @@ function goToChapter(chapterName) {
   subtitle.innerText = chapter.subtitle;
   let text = document.getElementById("text");
   text.innerText = chapter.text;
-  let image = document.getElementById("image");
-  image.src = chapter.img;
+  let media = document.querySelector('.media');
 
   let buttons = document.querySelector(".boutons");
   let button = "";
   let options = chapter.options;
-  for (i = 0; i < chapter.options.length; i++) {
+  for (i = 0; i < options.length; i++) {
     console.log(options[i].text);
     button += `<button onclick="${options[i].action}">${options[i].text}</button>`;
   }
   buttons.innerHTML = button;
 
   if(chapter.video != undefined) {
-    chapter.img = `<video src="${chapter.video}" muted autoplay loop></video>`
-  }
-  else{
-    image.src = chapter.img;
+    media.innerHTML = `<video src="${chapter.video}" muted autoplay loop>`
+  } else{
+    media.innerHTML = `<img src="${chapter.img}">`;
   }
 
-  let btn = document.querySelector(".btn");
-  const audio = new Audio('water_drop.mp3');
-  btn.addEventListener("click", function(){
-    audio.play();
-    audio.currentTime = 0;
-  })
-
-  localStorage.setItem("titre", chapter.subtitle);
+  audio.currentTime = 0;
+  audio.play();
+  
+  localStorage.setItem("titre", chapterName);
 }
-
-goToChapter('premiers_pas');
