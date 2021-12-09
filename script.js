@@ -68,7 +68,7 @@ const chaptersObj = {
   decision: {
     subtitle: "Décision",
     img: "assets/adventurer_after_combat.jpg",
-    video: "room_exploration.gif",
+    video: "assets/room_exploration.gif",
     text: "Après avoir battu et vaincu l'araignée géante, vous explorez vos options. Vous devez continuer votre route afin de trouver une issue à cette grotte maudite.",
     options: [
       {
@@ -193,3 +193,6 @@ if(checkboxSon.checked){
 else{
   audio.pause();
 }
+
+// let lanterne = document.getElementsByClassName("lanterne");
+// lanterne.style.backgroundColor = "#FEC47F";
