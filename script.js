@@ -166,6 +166,9 @@ function goToChapter(chapterName) {
   audio.play();
   
   localStorage.setItem("titre", chapterName);
+
+  let body = document.querySelector("body");
+  body.className = localStorage.getItem("titre");
 }
 
 function reset() {
@@ -181,3 +184,12 @@ window.addEventListener('storage', function(){
     audio.pause();
   }
 })
+
+let checkboxSon = document.querySelector("#audio");
+
+if(checkboxSon.checked){
+  audio.play();
+}
+else{
+  audio.pause();
+}
