@@ -13,7 +13,7 @@ const chaptersObj = {
   premiers_pas: {
     subtitle: "Premiers pas",
     img: "assets/cave_split.jpg",
-    text: "En entrant dans la mine abandonnée, vous rencontrez très tôt une bifurquation du chemin principal. Il se divise en deux chemins plus étroits. Vous pouvez soit emprunter le tunnel se dirigeant vers la gauche soit prendre celui de droite.",
+    text: "En entrant dans la mine abandonnée, vous rencontrez très tôt une bifurquation du chemin principal. Il se divise en deux chemins plus étroits. Devrais-je prendre le tunnel de gauche ou de droite...",
     options: [
       {
         text: "Prendre le tunnel de gauche",
@@ -32,10 +32,10 @@ const chaptersObj = {
   lanterne: {
     subtitle: "Lanterne",
     img: "assets/lantern.jpg",
-    text: "Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal.",
+    text: "Vous arrivez dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne.",
     options: [
       {
-        text: "Prendre la lanterne",
+        text: "Prendre la lanterne et faire demi-tour",
         action: "lanternIsFound()",
       },
     ],
@@ -173,3 +173,11 @@ function reset() {
     localStorage.clear();
     goToChapter("introduction");
 }
+
+let playerWantsAudio = true;
+
+window.addEventListener('storage', function(){
+  if(playerWantsAudio == false){
+    audio.pause();
+  }
+})
