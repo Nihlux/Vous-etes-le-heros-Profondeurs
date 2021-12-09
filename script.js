@@ -1,16 +1,12 @@
 const chaptersObj = {
   introduction: {
     subtitle: "Mise en situation",
-    img: "assets/",
-    text: "Vous êtes appelé à ",
+    img: "assets/introduction.jpg",
+    text: "Vous êtes appelés par l'entremise d'un contrat à libérer une grotte étant infestée par une certaine créature. Vous prenez votre courage à deux mains et vous pénétrez dans les profondeurs sombres...",
     options: [
       {
         text: "Commencer la partie",
         action: "goToChapter('premiers_pas')",
-      },
-      {
-        text: "Effacer ma partie",
-        action: "reset()",
       },
     ],
   },
@@ -20,12 +16,27 @@ const chaptersObj = {
     text: "En entrant dans la mine abandonnée, vous rencontrez très tôt une bifurquation du chemin principal. Il se divise en deux chemins plus étroits. Vous pouvez soit emprunter le tunnel se dirigeant vers la gauche soit prendre celui de droite.",
     options: [
       {
-        text: "Prendre le tunnel de gauche. Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal.",
-        action: "lanternIsFound()",
+        text: "Prendre le tunnel de gauche",
+        action: "goToChapter('lanterne')",
       },
       {
-        text: "Prendre le tunnel de droite.",
+        text: "Prendre le tunnel de droite",
         action: "isLanternFound()",
+      },
+      {
+        text: "Effacer ma partie",
+        action: "reset()",
+      },
+    ],
+  },
+  lanterne: {
+    subtitle: "Lanterne",
+    img: "assets/lantern.jpg",
+    text: "Vous empruntez le chemin de gauche avant d'arriver dans une petite pièce éclairée au plafond par un trou permettant à la lumière du jour de passer. Vous apercevez sur un baril une lanterne et sur une table à côté, un paquet d'allumettes. Vous allumez la lanterne et retournez au chemin principal.",
+    options: [
+      {
+        text: "Prendre la lanterne",
+        action: "lanternIsFound()",
       },
     ],
   },
@@ -48,6 +59,10 @@ const chaptersObj = {
         text: "Affronter l'araignée. Vous prenez votre courage à deux mains et vous vous décidez d'affronter cet horrible monstre. Vous remportez le combat et décidez de vous reposer un peu avant de continuer votre chemin.",
         action: "goToChapter('decision')",
       },
+      {
+        text: "Effacer ma partie",
+        action: "reset()",
+      },
     ],
   },
   decision: {
@@ -66,6 +81,10 @@ const chaptersObj = {
       {
         text: "Vous décider d'explorer la vaste pièce et trouvez une hache. Vous vous questionnez sur quel tunnel emprunter.",
       },
+      {
+        text: "Effacer ma partie",
+        action: "reset()",
+      },
     ],
   },
   repaire_de_laraignee: {
@@ -79,6 +98,10 @@ const chaptersObj = {
       },
       {
         text: "Fuir vers la sortie. Vous fuyez vers la sortie au plus vite et rentrez à votre domicile tard le soir. Les bébés de l'araignée géante connaissent votre trace et viennent vous tuer dans votre sommeil.",
+      },
+      {
+        text: "Effacer ma partie",
+        action: "reset()",
       },
     ],
   },
@@ -101,7 +124,7 @@ if(localStorage.getItem("lantern") != undefined){
 function lanternIsFound() {
   lanternFound = true;
   localStorage.setItem("lantern", true);
-  goToChapter("embuscade");
+  goToChapter("premiers_pas");
 }
 
 function isLanternFound() {
@@ -148,5 +171,5 @@ function goToChapter(chapterName) {
 function reset() {
     lanternFound = false;
     localStorage.clear();
-    goToChapter("premiers_pas");
+    goToChapter("introduction");
 }
