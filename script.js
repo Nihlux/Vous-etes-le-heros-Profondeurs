@@ -1,4 +1,19 @@
 const chaptersObj = {
+  introduction: {
+    subtitle: "Mise en situation",
+    img: "assets/",
+    text: "Vous êtes appelé à ",
+    options: [
+      {
+        text: "Commencer la partie",
+        action: "goToChapter('premiers_pas')",
+      },
+      {
+        text: "Effacer ma partie",
+        action: "reset()",
+      },
+    ],
+  },
   premiers_pas: {
     subtitle: "Premiers pas",
     img: "assets/cave_split.jpg",
@@ -75,7 +90,7 @@ if(localStorage.getItem("titre") != undefined){
   const titre = localStorage.getItem("titre");
   goToChapter(titre);
 } else{
-  goToChapter('premiers_pas');
+  goToChapter('introduction');
 };
 
 lanternFound = false;
@@ -128,4 +143,10 @@ function goToChapter(chapterName) {
   audio.play();
   
   localStorage.setItem("titre", chapterName);
+}
+
+function reset() {
+    lanternFound = false;
+    localStorage.clear();
+    goToChapter("premiers_pas");
 }
