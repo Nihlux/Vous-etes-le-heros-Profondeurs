@@ -78,4 +78,14 @@ button:hover {
     background-color: #7DA182;
 }
 
+.checkbox label {
+    font-size: 30px;
+}
+
+.checkbox {
+    position: absolute;
+    left: 30%;
+    bottom: 9%;
+}
+
 /*https://coolors.co/000000-141429-ffe2ad-709775-7da182*/
