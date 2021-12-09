@@ -28,7 +28,7 @@ html, body{
     align-items: center;
     width: 650px;
     min-height: 650px;
-    background-color: #FFE2AD;
+    background-color: #ffd483;
     min-height: 100px;
 }
 
@@ -106,5 +106,16 @@ button:hover {
 
 .lanterne button:hover {
     background-color: #FF8B3D;
+}
+
+.introduction {
+    background-color: #001e00;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.introduction .game {
+    background-color: #ffd483;
 }
 /*https://coolors.co/000000-141429-ffe2ad-709775-7da182*/
